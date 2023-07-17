@@ -1,0 +1,53 @@
+
+form {
+    border:0px solid;
+    background-color: rgb(188, 182, 181);
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+form header{
+    text-align: center;
+    background-color: rgb(40, 194, 143);
+    padding: 5%
+}
+div{
+    margin-bottom: 15px;
+}
+.Name input{
+    border: 0px solid black;
+    width: 99.4%;
+    height: 30px;
+    border-radius: 2px;
+}
+.Name h4{
+    display:inline;
+}
+.Gender{
+    font-weight: bold;
+}
+en{
+    font-weight: bold;
+}
+.Address textarea{
+        width: 99.4%;
+}
+.email input{
+    border: 0px solid black;
+    width: 99.4%;
+    height: 30px;
+    border-radius: 2px;
+}
+.Payment-Information input{
+    border: 0px solid black;
+    width: 99.4%;
+    height: 30px;
+    border-radius: 2px;
+}
+
+form button{
+    box-sizing: border-box;
+    width: 99.6%;
+    padding: 10px;
+    background-color: rgb(40, 194, 143);
+    border-style: none;
+}
