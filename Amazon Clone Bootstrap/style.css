@@ -321,8 +321,8 @@ header .dropdown-toggle{
 
 /* Start Of Content Area */
 .content-area{
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 /* Start Of Carousel */
 .carousel-control-next-icon,
@@ -330,7 +330,7 @@ header .dropdown-toggle{
   filter: invert(1);
 }
 .carousel-inner{
-    height: 500px;
+    height: 400px;
 }
 .carousel-control-prev {
     align-items: first baseline;
@@ -367,6 +367,14 @@ header .dropdown-toggle{
     background-position: center;
 
 }
+.ROW2 .card{
+    width: 107%;
+}
+.ROW2{
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between !important;
+}
 .row2-card1-img{
     background-image: url("row2 car1.jpg");
     background-size: cover;
@@ -392,20 +400,23 @@ header .dropdown-toggle{
     border: 0px solid transparent;
     border-radius: 0px;
 }
-.card2{
-    padding-right: 16px;
-}
-.card-width{
-    width: 90%;
-}
 .my-custom-cards .col-sm-3{
     width: 24%;
 }
 .my-custom-cards .col-sm-2{
     width: 23%;
 }
+
+.col-sm-2 .card-body input[type=submit]{
+    font-size: small;
+    
+}
+.log-in-btn{
+    border: 3px solid transparent;
+}
 .log-in-btn:focus{
-    border: 1px solid blue;
+    outline: 1px solid blue;
+    border: 3px solid white;
 }
 .border-for-laptop{
     border: 0px solid transparent;
@@ -420,6 +431,11 @@ header .dropdown-toggle{
 }
 .ROW2{
     margin-top: 150px;
+}
+.card-links a:hover{
+    
+    color: red;
+    text-decoration: underline !important;
 }
 /* End Of Cards */
 /* End Of Content Area */
