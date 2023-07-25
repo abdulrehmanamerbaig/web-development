@@ -1,7 +1,3 @@
-
-
-
-
 const prompt_box = document.getElementById("task");
 const taskList = document.getElementById("task-list");
 function addTask(){
