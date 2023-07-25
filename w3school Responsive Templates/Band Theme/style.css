@@ -1,6 +1,14 @@
 *{
     margin: 0px;
 }
+
+.scrolled_nav{
+    background-color: #ffffff !important;
+}
+.navbar-fixed-top.scrolled {
+    background-color: #fff !important;
+    transition: background-color 200ms linear;
+  }
 header nav{
     background-color: rgb(67, 65, 65) !important;
     opacity: 0.7;
