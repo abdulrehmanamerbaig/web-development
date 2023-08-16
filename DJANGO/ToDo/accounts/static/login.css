@@ -1,0 +1,241 @@
+/* .bg-bubbles li:nth-child(1){
+    left: 20%;
+    animation-delay: 1s;
+    
+}
+.bg-bubbles li:nth-child(2){
+    left: 70%;
+    animation-delay: 2s;
+    
+}*/
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+.pasu div{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #846add;
+    margin-top: 1%;
+    margin-right: -22%;
+    z-index: 99;
+    cursor:  pointer;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 5px transparent; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+
+    background: #fe8040; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    padding-top: 20px;
+
+    background: #fe8040; 
+  }
+
+body{
+    background-color: #232323 !important;
+    /* background-color: #687efe !important; */
+    min-height: 100vh;
+    min-width: 100%;
+    overflow: hidden !important;
+}
+
+.bg-bubbles li{
+    top: -40px;
+    position: absolute;
+    list-style: none;
+    height: 30px;
+    width: 30px;
+    background-color: #dcfe50;
+    border-radius: 50%;
+    animation: slide 2s linear infinite;
+}
+
+
+.bg-bubbles li:nth-child(even){
+    background-color: #fe8040;
+}
+
+.glass > form{
+    min-height: 90vh !important;
+    min-width: 100%;
+
+}
+.glass{
+    /* background:rgba(255, 255, 255, .1) ; */
+    /* box-shadow: 0 25px 45px rgba(0,0,0,.2); */
+    backdrop-filter: blur(4px);
+    /* position: relative; */
+    min-height: 100vh;
+    min-width: 100%;
+
+    overflow: hidden !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20%;
+    
+}
+.form_slider{
+    animation: form_slider 0.5s linear;
+}
+@keyframes form_slider{
+    0%{
+        margin-top:100%;
+    }
+    100%{
+        margin-top: 0%;
+
+    }
+}
+.arrows .previous{
+    top: 0%;
+    left: 10%;
+    cursor: pointer;
+}
+.arrows .previous:hover{
+    transform: translateX(-50%);
+    transition: 0.5s;
+
+}
+.arrows .next{
+    top: 0%;
+    right: 10%;
+    cursor: pointer;
+    animation: right_slider 0.5s linear;
+}
+.arrows .next:hover{
+    transform: translateX(50%);
+    transition: 0.5s;
+}
+
+
+form{
+    background-color: #ffffff;
+    color: black;
+    border: 0px solid transparent;
+    width: 50% ;
+    height: 90vh;
+    border-radius: 10px ;
+    position: relative;
+
+}
+
+form h3{
+    font-family: Montserrat-ExtraBold;
+    font-weight: 800 !important; 
+    color: #666;
+}
+
+form input,textarea{
+    border-radius: 25px !important; 
+    height: 50px;
+    width: 100% !important;
+    padding-left: 30px !important;
+    color: #666;
+    background-color: #E6E6E6 !important;
+    border: none !important;
+    outline: none !important;
+    font-weight: 600 !important;
+    display: inline-block !important;
+}
+.new_user{
+    width: 100%;
+    font-size: 0.9rem;
+    
+}
+.new_user p{
+    color: #666 !important;
+    font-weight: 600 !important;
+}
+.new_user a{
+    color: #846add !important;
+    font-weight: 600;
+}
+.new_user a:hover{
+    animation: slide_right 1s linear infinite;
+}
+.error p{
+    font-weight: 800 !important;
+    color: #666 !important;
+}
+@keyframes slide_right{
+    50%{
+        margin-left: 10px;
+    }
+}
+
+
+form input:active{
+    box-shadow: rgba(17, 184, 59, 0.961) 0px 7px 29px 0px !important;
+}
+
+form textarea:active{
+    box-shadow: rgba(17, 184, 59, 0.961) 0px 7px 29px 0px !important;
+}
+
+form textarea{
+    padding-top: 10px !important;
+    min-height: 150px !important;
+    max-height: 250px !important;
+}
+
+form button{
+    border-radius: 25px !important; 
+    height: 50px;
+    width: 150px;
+    background-color: #846add !important;
+    font-weight: 600 !important;
+    color: white !important;
+    
+}
+
+form button:hover{
+    background-color: #232323 !important;
+}
+
+form button:hover i{
+    transform: translateX(50%) ;
+    transition: 0.5s;
+}
+
+@keyframes slide{
+    0%{
+        transform: translateY(100vh) scale(0.5)
+    }
+
+    100%{
+        transform: translateY(-15vh) scale(1)
+
+    }
+}
+@media only screen and (max-width: 426px){
+    ::placeholder{
+        font-size: 0.8rem !important;
+    }
+    .new_user {
+        font-size: 0.8rem;
+    }
+}

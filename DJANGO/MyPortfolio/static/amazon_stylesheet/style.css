@@ -354,14 +354,14 @@ header .dropdown-toggle{
 /* End Of Carousel */
 /* Start Of Cards */
 .card3-single-img{
-    background-image: url("Card4.jpg");
+    background-image: url("/static/amazon_Images/Card4.jpg");
     background-size: cover;
     height: 16rem;
     background-position: center;
 
 }
 .ROW1 .laptop-img{
-    background-image: url("laptop_img.jpg");
+    background-image: url("/static/amazon_Images/laptop_img.jpg");
     background-size: cover;
     height: 15rem;
     background-position: center;
@@ -377,7 +377,7 @@ header .dropdown-toggle{
     justify-content: space-between !important;
 }
 .row2-card1-img{
-    background-image: url("row2 car1.jpg");
+    background-image: url("/static/amazon_Images/row2 car1.jpg");
     background-size: cover;
     background-position: center;
     height: 15rem;
