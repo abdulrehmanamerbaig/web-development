@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TODO</title>
+    <link rel="stylesheet" href="{%static 'index.css'%}">
+    <link rel="icon" type="image/x-icon" href="{% static 'Login_Images/clipboard.png' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body id="main-body" class="color-3">
+    
+    <div class="offcanvas  offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="container d-flex p-3 mt-3 justify-content-end">
+      <button type="button" class="btn-close bg-white " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+      </div>
+      <div class="container mt-4 ">
+
+        <div class="offcanvas-body">
+            <h3>Hey {{user}}!</h3>
+            <p>Would you like to change color as you like? Click on any of the color to get it.</p>
+            <div class="colors mb-2 mt-2">
+              <button class="color-1" ></button>
+              <button class="color-2" ></button>
+              <button class="color-3" ></button>
+              <button class="color-4" ></button>
+              <button class="color-5" ></button>
+              <button class="color-6" ></button>
+            </div>
+            <button class="btn mb-3 completed w-100  d-flex justify-content-between align-items-center text-white">
+              
+              <p class="d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+              </svg>Completed Task: </p> 
+              <p> {{completed}}</p></button>
+          
+            <button class="btn  mb-3 w-100 pending d-flex justify-content-between align-items-center text-white">
+              <p class="d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+              </svg>Pending Task: </p> 
+              <p>{{not_completed}}</p></button>
+              <button class="btn  mb-3 w-100 high d-flex justify-content-between align-items-center text-white">
+                <p class="d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
+                  <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
+                </svg>High-Priority Task: </p> 
+                <p>{{high_priority}}</p></button>
+                <button class="btn  mb-3 w-100 middle  d-flex justify-content-between align-items-center text-white">
+                  <p class="d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
+                    <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
+                  </svg>Middle-Priority Task: </p> 
+                  <p>{{middle_priority}}</p></button>
+                  <button class="btn  mb-3 w-100 low d-flex justify-content-between align-items-center text-white">
+                    <p class="d-flex gap-3 align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app" viewBox="0 0 16 16">
+                      <path d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
+                    </svg>Low-Priority Task: </p> 
+                    <p>{{low_priority}}</p></button>
+                    <a type="button" href="/logout" class="btn position-absolute bottom-0 mb-3 sign-out d-flex justify-content-between align-items-center text-white">
+                      <p>Sign Out </p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                      </svg>
+                    </a>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class = "set_length">
+      
+
+      <div class="mb-4 d-flex justify-content-center">
+        <nav class="navbar mb-5 navbar-expand-lg  navbar-expand-md">
+          <div class="container">
+      <button class="btn bars-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg></button>
+            <div>
+              <a href="/" class="text-white px-3">Home</a>
+              <a href="/about" class="text-white px-3 active">About</a>
+
+            </div>
+
+            
+          </div>
+        </nav>
+      </div>
+      
+    
+          <div class="container">
+            <div class=" glass glass_animation text-white container d-flex  pb-4 position-relative">
+              <div class="sidebar2 "data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+
+              </div>
+              <div>
+
+                <h3 class="text-white text-center mt-4">
+                  About This App
+                </h3>
+                <div class="w-50 mx-auto me-auto mt-5 pt-5" >
+                  <p class="text-white ">I have named this app a <code class="text-dark">Glassy TODO app</code> because you will find the transparency almost everywhere. It is one of the most responsive and user friendly app. Your task security is our prior mission and it is handled by our authentication system. The tools/framework I have used to create this TODO app:<br>
+                    <br>
+                    <ol>
+                      <code class="text-white"><li>Django</li></code>
+                      <code class="text-white"><li>Python</li></code>
+                      <code class="text-white"><li>Javascript</li></code>
+                      <code class="text-white"><li>Bootstrap5</li></code>
+                      <code class="text-white"><li>HTML</li></code>
+                      <code class="text-white"><li>CSS</li></code>
+                      
+                    </ol>
+                    </p>
+                </div>
+              
+                
+              </div>
+            </div>
+          </div>
+
+            
+              
+
+    <script src="{% static '/JS/script.js'%}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   </body>
+</html>
