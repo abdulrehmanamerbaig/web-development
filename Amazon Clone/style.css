@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    font: Arial;
+    border: border-box;
+}
+
+body{
+    background-color: rgb(255, 195, 205);
+}
+.logo:hover{
+    border: 2px solid white;
+}
+.elem-hover-nav{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.elem-hover-nav:hover{
+    border: 2px solid white;
+}
+.elem-hover{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.elem-hover:hover{
+    border: 2px solid white;
+}
+
+
+/* Start Of Navigation Bar */
+.navbar{
+    height: 4rem;
+    background-color: #1f2b2b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+
+
+/* Box 1 */
+.navbar-logo{
+    height:50px;
+    width: 100px;
+}
+
+
+/* Box 2 */
+
+.upper-text{
+    color: rgb(194, 194, 194);
+    font-size: 1rem;
+    margin-left: 20px;
+}
+.lower-text{
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.nav-location{
+    display: flex;
+    align-items: center;
+}
+
+/* Box 3 */
+.nav-search{
+    justify-content: space-evenly;
+    display: flex;
+    width: 850px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(223, 171, 93);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.nav-search:hover{
+    border: 2px solid orange;
+}
+.search-select{
+    background-color: rgb(204, 204, 204);
+    width: 55px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+}
+.search-input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+.search-icon{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: black;
+}
+
+/* Box 4 */
+.sign-first{
+    font-size: 0.9rem;
+}
+.sign-second{
+    font-weight: 700;
+}
+
+/* Box 5 */
+.about_orders_second{
+    font-weight: 700;
+}
+
+/* Box 6 */
+.nav-cart i{
+    font-size: 25px;
+}
+.nav-cart{
+    align-items: baseline;
+    display: flex;
+}
+.nav-cart p{
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+/* End Of Navigation Bar */
+
+
+/* Start Of Panel */
+.panel{
+    background-color: #3a5151;
+    color: white;
+    height: 39px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+.panel-bars{
+    display: inline;
+}
+.panel-ops p{
+    margin-left: 8px;
+    display:inline;
+}
+.panel-ops{
+    width: 67%;
+    font-size: 0.90rem;
+}
+.panel-img {
+    width: 25%;
+}
+/* End Of Panel */
+
+/* Start Of Hero section */
+
+.hero-section{
+    background-image: url("hero_img2.jpg");
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hero-info{
+    background-color: white;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    font-size: medium;
+    font-weight: 100;
+    margin-top: 290px;
+}
+
+/* End Of Hero Section */
+
+/* Start Of Shopping Section */
+.shop-items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 100px;
+    position: relative;
+    
+}
+.box{
+    margin-top: 10px;
+    border: 1px solid white;
+    height: 420px;
+    width: 22.5%;
+    background-color: white;
+    padding: 20px 0px 15px;
+    justify-content: space-evenly;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+ 
+.box-1-img{
+    background-image: url("Shop1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80%;
+    margin-top: 1rem;
+    
+}
+.box-see-more a{
+    
+    text-decoration: none;
+    color: rgb(57, 124, 146);
+}
+.box-see-more{
+    margin-top: 1.5rem;
+}
+
+.box-upper-imgs{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box-lower-imgs{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box2-img1{
+    width: 42%;
+}
+.box2-img2{
+    width: 42%
+}
+.box2-img3{
+    width: 42%;
+}
+.box2-img4{
+    width: 42%;
+}
+.box2-see-more{
+    margin-top: 2.3rem;
+}
+.box3-img{
+    margin-top: 1rem;
+}
+.box3-see-more{
+    margin-top: 4.5rem;
+}
+
+.back-top{
+    background-color: #3a5151;
+    color: white;
+    height: 39px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.back-top a{
+    text-decoration: none;
+    color: white;
+    
+}
