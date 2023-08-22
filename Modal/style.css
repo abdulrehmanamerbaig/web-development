@@ -1,0 +1,111 @@
+*{
+    margin: 0
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container button{
+    background-color: #6b46c1;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.container button:hover{
+    border: 3px solid #6b46c1;
+    background-color: transparent;
+    color: #6b46c1
+}
+.modal-screen-bg{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    position: absolute;
+    top:0;
+    opacity: 0;
+    z-index:-1;
+    transition: 1s;
+}
+
+.show-login-form{
+    top:50% !important;
+}
+
+.login-form{
+    width: 60%;
+    height: 30vh;
+    background-color: #9d8ec0;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px 3px white ;
+    z-index: 9;
+    transition: 1s;
+}
+.login-form span{
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: aqua;
+    width: 10%;
+    text-align: center;
+
+}
+.login-form span:hover{
+    background-color: #9d8ec0;
+    color: white;
+}
+form .username{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+form .password{
+    margin-bottom: 10px;
+}
+form input{
+    width: 100%;
+    height: 3vh;
+    border: none;
+}
+form input:focus{
+    border: none;
+    outline: none;
+}
+form button{
+    border: 3px solid transparent;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    background-color: #6b46c1;
+    border: none;
+    cursor: pointer;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    margin-bottom: 10px !important;
+    margin-right: 10px !important;
+    color: white
+}
+form button:hover{
+    border: 1px solid #6b46c1;
+    background-color: transparent;
+}
+.show-bg-modal{
+    opacity: 1;
+    z-index: 1;
+}
+
