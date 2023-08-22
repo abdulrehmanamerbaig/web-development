@@ -1,0 +1,75 @@
+body{
+    margin: 30px;
+    background-image: url("https://images.freecreatives.com/wp-content/uploads/2016/04/Bubble-Plain-Purple-Background-.jpg");
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+header {
+    text-decoration: underline overline;
+    border: 0px solid;
+    background-color: aquamarine;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+}
+nav{
+    border: 0px solid;
+    background-color: rgb(45, 42, 42);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-right:20px;
+    text-transform: capitalize
+
+}
+nav a:hover{
+    background-color: rgb(125, 125, 59);
+    text-decoration: underline overline white;
+}
+.Courses{
+    text-align: center;
+}
+.Courses p{
+    padding-top: 30px;
+    margin-bottom: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    text-shadow: 3px 3px 3px rgb(247, 243, 243);
+    
+}
+.Courses .video-segment-01 iframe{
+    margin-right: 50px;
+}
+.Courses .video-segment-02 iframe{
+    margin-right: 50px;
+}
+footer{
+    text-align: center;
+    
+}
+footer a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+}
+footer a:hover{
+    background-color: rgb(59, 125, 81);
+}
+.footer-seperator{
+    border: 0px solid ;
+    background-color: rgb(202, 202, 69);
+    padding: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+}
+.About-Me{
+    font-weight: lighter;
+}
