@@ -1,0 +1,123 @@
+*{
+    font-family: cursive !important;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: rgba(80, 139, 252, 1);  /* fallback for old browsers */
+
+  }
+  
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #00e6a8;
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 255, 0.671);
+  }
+body{
+    min-height: 100vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #7e40f6;
+    background: -webkit-linear-gradient(to right, rgba(126, 64, 246, 1), rgba(80, 139, 252, 1));
+    background: linear-gradient(to right, rgba(126, 64, 246, 1), rgba(80, 139, 252, 1));
+
+}
+.edit-submit1{
+    
+    margin-left: -12px;
+}
+a svg:hover{
+    transition: 0.5s;
+    transform: scale(1.5);
+}
+.glass{
+    width: 80%;
+    min-height: 80vh;
+    background-color: aliceblue;
+    background:rgba(255, 255, 255, .1) ;
+    box-shadow: 0 25px 45px rgba(0,0,0,.2);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    border-bottom-left-radius: 0px ;
+    border-bottom-right-radius: 0px ;
+}
+.prior .btn-check:checked + .check-label {
+    background-color: transparent !important;
+    color: white;
+    transform: scale(1.05);
+    transition: 0.5s;
+    border: 2px solid;
+}
+.OPTION .check-label{
+    border-radius: 40px;
+}
+.task-title input{
+    background-color: transparent !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0%;
+}
+.task-title input:focus{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.task-description textarea:focus{
+    transform: scale(1.1);
+}
+.task-title input:focus{
+    box-shadow: none !important;
+    border: 2px solid white;
+
+
+}
+.task-description textarea{
+    background-color: transparent !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0%;
+}
+.task-description textarea:focus{   
+    box-shadow: none !important;
+    border: 2px solid white;
+    transition: 0.1s;
+}
+
+::placeholder{
+    color: white !important;
+    font-family: cursive;
+}
+@media only screen and (max-width: 750px){
+    .gap-5{
+        gap: 2rem!important;
+    row-gap: 2rem !important;
+    column-gap: 2rem !important;
+    }
+}
+body::-webkit-scrollbar{
+    width: 0px !important;
+    height: 0vh !important;
+
+    
+}
+body{
+    animation: to-left 0.5s linear;
+}
+@keyframes to-left{
+    0%{
+        margin-left: 100%
+    }
+    100%{
+        margin-left: 0%
+
+    }
+}
