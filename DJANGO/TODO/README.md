@@ -5,7 +5,7 @@ Please click on a link to see the demo of my project
 ***[Link...](https://drive.google.com/file/d/1Qh8LCdABpZqR6VNaIT353Iov78Ok-2V7/view?usp=drive_link)***
 
 ## About this Project
-My endeavour is about creating an application centred around the concept of TODO list that provides one of the best graphical user interfaces to captivate our visitors. Firstly, this application harnesses the power of one of the emerging frameworks which is Django because it provides a substantial amount of pre-built libraries or modules through which we can increase our productivity and quality over quantity. Also, it handles the authentication and authorization system as per the setup.. 
+My endeavour is about creating an application centred around the concept of TODO list, to perform *CRUD* operations, that provides one of the best graphical user interfaces to captivate our visitors. Firstly, this application harnesses the power of one of the emerging frameworks which is Django because it provides a substantial amount of pre-built libraries or modules through which we can increase our productivity and quality over quantity. Also, it handles the authentication and authorization system as per the setup.. 
 
 The tools and languages that are used in this project are:
 - `Python`
