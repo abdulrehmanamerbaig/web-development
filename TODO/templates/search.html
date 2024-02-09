@@ -1,0 +1,131 @@
+
+{% extends 'base.html' %}
+{% load static %}
+      {% block interface %}
+      
+
+
+<form action="/home" method="post" class=" mb-2  container mt-5 d-flex justify-content-center align-items-center position-relative">
+  {%csrf_token%}
+    <div class=" glass container d-flex pb-4 position-relative">
+      <div class="position-absolute the-backer ">
+        <a href="/" class="text-black"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+        </svg></a>
+        
+      </div>
+      
+      <div class="sidebar "data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></div>
+      <div class="w-100">
+        <header class="pb-3">
+          <div class="d-flex justify-content-center">
+            <img src="{%static 'TODO_Images/folder.svg'%}" class="" height="100" alt="">
+          </div>
+          <h2 class="text-white text-center">Task List</h2>
+        </header>
+        <div class="head-row d-flex flex-wrap justify-content-center  text-white">
+          <div class="col-lg-6 col-md-6 col-12 mb-2  text-center">
+            <p>Task 
+              
+            </p>
+          </div>
+          <div class="col-lg-6 justify-content-center col-md-6 col-12 mb-2  d-flex align-items-center text-center">
+            
+            
+            <p>Priority 
+              {% if asc_priority %}
+              <div class="priority_asc">
+                <a href="/sort_priority_desc_search/{{input_val}}" class=" text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+                </svg></a>
+              </div>
+              
+            {% else %}
+              <div class="priority_desc">
+                <a href="/sort_priority_asc_search/{{input_val}}" class="text-white "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                </svg></a>
+              </div>
+            
+          {% endif %}
+        </p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="divider"></div>
+        </div>
+        {% if found %}
+            {% for task in task_title %}
+            <div class="d-flex flex-wrap justify-content-center pt-1 pb-1 align-items-center">
+
+            <div class="hoohoo col-lg-6 col-md-6 col-12 mb-2 d-flex justify-content-center text-white text-center ">
+                <!-- <button  data-bs-toggle="modal" data-bs-target="#taskModal" desc = "{{task.task_description}}" >{{task.id}}</button> -->
+                <span class="badge text-bg-primary desc-span" data-bs-toggle="modal" data-bs-target="#taskModal" desc = "{{task.task_description}}">Desc</span>
+             
+                {% if task.task_status %}
+                
+                <p class="px-3  bwline text-break">{{task.task_title}}</p>
+                {% else %}
+                <p class="px-3  text-break">{{task.task_title}}</p>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 col-md-6 col-12 mb-2  d-flex justify-content-center text-white text-center">
+                {% if task.task_priority == 'High Priority'%}
+                <span class="badge text-bg-danger">{{task.task_priority}}</span>
+                {% elif task.task_priority == 'Medium Priority'%}
+                <span class=" overflow-hidden badge text-bg-warning">{{task.task_priority}}</span>
+                {% else %}
+                <span class="badge text-bg-info">{{task.task_priority}}</span>
+
+                {% endif%}
+            </div>
+            
+            </div>
+        <div class="d-flex justify-content-center">
+          <div class="divider"></div>
+        </div>
+        {%endfor%}
+    {% else %}
+    <p class="text-white text-center mt-4">{{task_title}}</p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var svgElement = document.querySelector('.priority_desc');
+          console.log('I AM IN', svgElement);
+            svgElement.style.display = 'none';
+      });
+  </script>
+        {% endif %}
+
+      </div>
+    </div>
+      
+      
+
+</form>
+
+          
+
+
+
+
+
+<!-- Description Modal -->
+<div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <h5 class="text-white text-center">Your Task Description</h5>
+    
+      <div class="modal-body container d-flex justify-content-center gap-2" id="modalTaskDescription">
+        <textarea class="text-white desc w-75 text-center" placeholder="You have not added the description yet" disabled></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-info w-100" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    {% endblock %}
+    

@@ -1,0 +1,33 @@
+.bg_body{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.clr-tray{
+  height: 50px;
+  border: 1px solid transparent;
+  background-color: aqua;
+  position: fixed;
+  width: 70%;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* margin-right: auto; */
+}
+.col-md-2{
+  cursor:pointer;
+  border: 1px solid transparent;
+  height: 50%;
+  width: 15% !important;
+  background-color: aqua;
+}
+@media screen and (max-width: 600px){
+    .clr-tray{
+      height: 250px;
+      
+    }
+    .col-md-2{
+      width: 100% !important;
+      height: 10% ;
+    }
+}

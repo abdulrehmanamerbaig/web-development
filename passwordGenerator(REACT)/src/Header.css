@@ -1,0 +1,15 @@
+
+h1{
+    
+    width: 520px;
+    color: var(--Aureolin, #F8EF00);
+    /* Heading */
+    font-family: Tomorrow;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 100% */
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}

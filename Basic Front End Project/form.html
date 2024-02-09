@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARA Form</title>
+    <link rel = "stylesheet" href = "form.css">
+</head>
+<body>
+    <form action="">
+        <div id = "header-align">
+            <header>
+                <h1>Payement Form</h1>
+            </header>
+        </div>
+        
+        <hr style = "border-color:black; ">
+        <div class = "User-Information">
+            <h2>User Information</h2>
+            <div class = "Name">
+                <en>Name: *</en><br>
+                <input type="text" placeholder = "Abdul Rehman" required>
+        </div>
+            
+            <div class = "Gender">
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input type = "radio" name = "Gender" id = "Male">
+                    <label for="Male">Male</label>
+                    <input type = "radio" name="Gender" id = "Female">
+                    <label for="Female">Female</label>
+                </fieldset>
+            </div>
+
+            <div class = "Address">
+                <en>Address:</en>
+                <textarea rows="5" cols="" placeholder="House 10..."></textarea>
+            </div>
+
+            <div class = "email">
+                <en>Email:</en><br>
+                <input type = "email" placeholder="abc@gmail.com">
+            </div>
+            <div class = "PinCode">
+                <en>Pincode</en><br>
+                <input type = "password" placeholder="123456">
+            </div>
+        </div>
+
+        <div class = "Payment-Information">
+            
+            <h2>Payment Information</h2>
+            <div class = "Accepted-Cards">
+                <en>Accepted Cards</en><br>
+                <img src = "UBL-Visa-Infinite-Debit-Card.png" alt = "UBL" height="50px" width="auto">
+                <img src = "hbl.png" alt = "UBL" height="50px" width="auto">
+                <img src = "hbl.png" alt = "UBL" height="50px" width="auto">
+                <img src = "UBL-Visa-Infinite-Debit-Card.png" alt = "UBL" height="50px" width="auto">
+            </div>
+            
+            <div id = "Card-Type">
+                <en>Card Type</en><br>
+                <select id="cards" name="cards">
+                    <option value="" disabled selected hidden>Select To Choose</option>
+                    <option value="HBL">HBL</option>
+                    <option value="UBL">UBL</option>
+                    <option value="Standard Chartered">Standard Chartered</option>
+                    <option value="Sada Pay">Sada Pay</option>
+                </select>
+            </div>
+            <div id = "Card-Number">
+                <en>Card Number: *</en><br>
+                <input type="password" placeholder="11100-020210-10">
+            </div>
+            <div id = "Expire-Date">
+                <en>Expiration Date</en><br>
+                <input type = "date">
+            </div>
+        </div>
+        <footer>
+            <button type="submit">PAY NOW</button>
+        </footer>
+    </form>
+</body>
+</html>

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+      {% block interface %}
+      
+      
+<div class=" task-adder d-flex justify-content-center">
+  <button type="button" class=" btn btn-danger text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <span>Add Task</span>
+  </button>
+</div>
+
+<form action="/home" method="post" class=" mb-2  container mt-2 d-flex justify-content-center align-items-center position-relative">
+  {%csrf_token%}
+    <div class=" glass container d-flex pb-4 position-relative">
+      <div class="sidebar "data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"></div>
+      <div class="w-100">
+        <header class="pb-3">
+          <div class="d-flex justify-content-center">
+            <img src="{%static 'TODO_Images/folder.svg'%}" class="" height="100" alt="">
+          </div>
+          <h2 class="text-white text-center">Task List</h2>
+        </header>
+        <div class="head-row d-flex flex-wrap  text-white">
+          <div class="col-lg-4 col-md-4 col-12 mb-2  text-center">
+            <p>Task 
+              {% if asc_tasks %}
+              <a href="/reverse_sort_alphabetically" class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+              </svg></a>
+              {% else %}
+              <a href="/sort_alphabetically" class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+              </svg></a>
+              {%endif%}
+            </p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mb-2  text-center">
+            
+            
+            <p>Priority 
+              {% if asc_priority %}
+              <a href="/sort_priority_desc" class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+                <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+              </svg></a>
+            {% else %}
+            <a href="/sort_priority_asc" class="text-white"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg></a>
+          {% endif %}
+        </p>
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mb-2 text-center">
+            <p>Actions</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="divider"></div>
+        </div>
+
+        {% for task in tasks %}
+        <div class="d-flex flex-wrap pt-1 pb-1 ">
+
+          <div class="hoohoo col-lg-4 col-md-4 col-12 mb-2 d-flex  text-white text-center ">
+            <!-- <button  data-bs-toggle="modal" data-bs-target="#taskModal" desc = "{{task.task_description}}" >{{task.id}}</button> -->
+            <div class="col-3 mx-5 ">
+              <span class="badge  text-bg-primary desc-span" data-bs-toggle="modal" data-bs-target="#taskModal" desc = "{{task.task_description}}">Desc</span>
+            </div>
+            {% if task.task_status %}
+            
+              <p class="bwline text-break">{{task.task_title}}</p>
+            {% else %}
+              <p class=" text-break">{{task.task_title}}</p>
+            {% endif %}
+          </div>
+          <div class="col-lg-4 col-md-4 col-12 mb-2 d-flex  justify-content-center align-items-start text-white text-center">
+            {% if task.task_priority == 'High Priority'%}
+            <span class="badge text-bg-danger">{{task.task_priority}}</span>
+            {% elif task.task_priority == 'Medium Priority'%}
+            <span class=" overflow-hidden badge text-bg-warning">{{task.task_priority}}</span>
+            {% else %}
+            <span class="badge text-bg-info">{{task.task_priority}}</span>
+
+            {% endif%}
+          </div>
+          
+          <div class="col-lg-4 col-md-4 col-12 mb-2 mt-2  action-btns text-white text-center flex-wrap d-flex justify-content-center gap-2">
+            <a href="/delete_task/{{ task.id }}" type="button" class="del-t btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+              <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+            </svg></a>
+            <a href="/update_task/ {{task.id}}" type="button" class="update-t btn updator btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg></a>
+              <a type="button" href="/update_status/ {{task.id}}" class="dana-don d-flex align-items-center justify-content-center">
+                <svg width="25" height="25" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M15 22.75H9C3.57 22.75 1.25 20.43 1.25 15V9C1.25 3.57 3.57 1.25 9 1.25H15C20.43 1.25 22.75 3.57 22.75 9V15C22.75 20.43 20.43 22.75 15 22.75ZM9 2.75C4.39 2.75 2.75 4.39 2.75 9V15C2.75 19.61 4.39 21.25 9 21.25H15C19.61 21.25 21.25 19.61 21.25 15V9C21.25 4.39 19.61 2.75 15 2.75H9Z" fill="#000000"/><path d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z" fill="#000000"/></svg>
+              </a>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="divider"></div>
+        </div>
+        {%endfor%}
+      </div>
+    </div>
+      
+      
+
+<!-- Description Modal -->
+<div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <h5 class="text-white text-center">Your Task Description</h5>
+    
+      <div class="modal-body container d-flex justify-content-center gap-2" id="modalTaskDescription">
+        <textarea class="modal-textarea text-white desc w-75 text-center" placeholder="You have not added the description yet" disabled></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-info w-100" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Task Adder Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="head ">
+
+        <h1 class="modal-title  text-white " id="exampleModalLabel">
+          Add Task</h1>
+      </div>
+      <div class="modal-body">
+        <input type="text" maxlength="50" class="form-control mb-2 text-white" id="title" name="title" placeholder="Your Task Title [Maximum Length: 30ch]" required>
+        <textarea class="form-control mb-2 text-white" id="description" name="description" rows="3" placeholder="Description"></textarea>
+        
+        <div class="prior ">
+          <p class="text-white">Prioritize Your Task</p>
+          <div class="col-12 d-flex justify-content-center">
+            <input type="radio" class="btn-check " name="priority" id="option1" value="High Priority" autocomplete="off" required> 
+            <label class="btn btn-danger  mb-2 check-label" for="option1">High Priority</label>
+
+          </div>
+          <div class="col-12 d-flex justify-content-center">
+            <input type="radio" class="btn-check" name="priority" id="option2" value="Medium Priority" autocomplete="off" required>
+            <label class="btn btn-warning w-50 mb-2 check-label" for="option2">Medium Priority</label>
+
+          </div>
+        
+          <div class="col-12 d-flex justify-content-center">
+            <input type="radio" class="btn-check" name="priority" id="option4" value="Low Priority" autocomplete="off" required>
+            <label class="btn btn-info w-50 check-label" for="option4">Low Priority</label>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="p-3">
+        <button type="submit" class="mb-2 btn btn-outline-warning w-100">Save</button>
+        <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+</div>
+    
+</form>
+
+          
+
+
+
+
+
+    
+    {% endblock %}
+    

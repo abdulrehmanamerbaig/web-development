@@ -1,0 +1,116 @@
+.app_{
+  width: 40%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+.clipboard .clipboard-border{
+  border: 2px solid var(--Bright-Aqua, #00F0FF) ;
+  background: rgba(0, 240, 255, 0.10);
+  color: var(--Bright-Aqua, #00F0FF);
+  /* width: 70%; */
+}
+.clipboard input{
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  color: var(--Bright-Aqua, #00F0FF);
+  width: 95%;
+  height: 50px;
+  
+}
+
+.clipboard button{
+  fill: var(--Aureolin, #F8EF00);
+}
+.clipboard-border svg{
+  cursor: pointer;
+}
+.svg_decor svg{
+  cursor: pointer;
+}
+.svg_decor .svg_decor_p p{
+  top: 0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+.svg_decor .s_-2 svg{
+  position: absolute;
+  top: 0;
+  margin-left: 180px;
+  margin-top: 17px;
+}
+input[type="range"]{
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  appearance: none;
+  width: 388px;
+height: 3px;
+  background-color: #00F0FF !important;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--Aureolin, #F8EF00);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+label{
+  font-family: Tomorrow;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 150% */
+letter-spacing: 3.2px;
+}
+input[type="checkbox"]:checked {
+  background: #F8EF00;
+  outline: none;
+  border: none;
+}
+input[type="checkbox"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #F8EF00;
+}
+input[type="checkbox"]:after {
+  content: ' ';
+  position: relative;
+  left: 40%;
+  top: 20%;
+  width: 15%;
+  height: 40%;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(50deg);
+  display: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+@media (max-width: 1142px) {
+  .svg_decor .s_-2 svg{
+    margin-left: 180px;
+   }
+ }
+
+ @media (max-width: 499px){
+  .svg_decor_p p{
+    font-size: 0.8rem !important;
+  }
+  
+ }

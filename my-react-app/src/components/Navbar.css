@@ -1,0 +1,25 @@
+header{
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #21222A;
+    height: 13%;
+
+}
+header .left-side img{
+    height: 40px;
+}
+
+header .left-side{
+    display: flex;
+    align-items: center;
+    color: aqua;
+}
+header .right-side{
+    color: white;
+}
